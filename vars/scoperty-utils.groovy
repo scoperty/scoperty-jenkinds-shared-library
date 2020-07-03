@@ -5,7 +5,7 @@
 
 
 
-String getBranchType(String branchName) {
+def getBranchType(String branchName) {
 	def devPattern = ".*develop"
 	def releasePattern = ".*release/.*"
 	def featurePattern = ".*feature/.*"
@@ -29,7 +29,7 @@ String getBranchType(String branchName) {
 	}
 }
 
-String getDeploymentEnvironment(String branchType) {
+def getDeploymentEnvironment(String branchType) {
 	if (branchType == "pullRequest") {
 		return "pullRequest"
 	} else if (branchType == "dev") {
@@ -43,7 +43,7 @@ String getDeploymentEnvironment(String branchType) {
 	}
 }
 
-String getBuildEnvironment(String deploymentEnvironment) {
+def getBuildEnvironment(String deploymentEnvironment) {
 	if (deploymentEnvironment == "pullRequest" || deploymentEnvironment == "none") {
 		return "dev"
 	} else {
@@ -51,7 +51,7 @@ String getBuildEnvironment(String deploymentEnvironment) {
 	}
 }
 
-String getSonarArguments(String deploymentEnvironment) {
+def getSonarArguments(String deploymentEnvironment) {
 	if (deploymentEnvironment == "pullRequest") {
 		return "-Dsonar.pullrequest.base=${CHANGE_TARGET} -Dsonar.pullrequest.branch=${CHANGE_BRANCH} -Dsonar.pullrequest.key=${CHANGE_ID}"
 	} else if (deploymentEnvironment == "dev" || deploymentEnvironment == "prod") {
