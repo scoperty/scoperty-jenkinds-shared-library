@@ -1,5 +1,6 @@
 /*
  * A set of reusable functions for Scoperty Jenkins pipelines.
+ * !!! IMPORTANT : This is a public repo, please do not include any confidential information here. !!!
  */
 
 
