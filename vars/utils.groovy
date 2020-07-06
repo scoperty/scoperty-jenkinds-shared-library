@@ -3,8 +3,6 @@
  * !!! IMPORTANT : This is a public repo, please do not include any confidential information here. !!!
  */
 
-
-
 def getBranchType(String branchName) {
 	def devPattern = ".*develop"
 	def releasePattern = ".*release/.*"
@@ -59,4 +57,12 @@ def getSonarArguments(String deploymentEnvironment) {
 	} else {
 		return ""
 	}
+}
+
+def createVirtualEnv(String pythonPath, String name) {
+	sh "${pythonPath} -m venv ${name}"
+}
+
+def executeIn(String environment, String script) {
+	sh "source ${environment}/bin/activate && " + script
 }
