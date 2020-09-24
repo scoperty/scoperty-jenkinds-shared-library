@@ -8,7 +8,7 @@ def getBranchType(String branchName) {
 	def releasePattern = ".*release/.*"
 	def featurePattern = ".*feature/.*"
 	def hotfixPattern = ".*hotfix/.*"
-	def masterPattern = ".*master"
+	def masterPattern = ".*master|scoperty20"
 	def pullRequest = ".*PR.*"
 	if (branchName =~ devPattern) {
 		return "dev"
