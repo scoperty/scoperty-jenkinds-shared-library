@@ -70,3 +70,14 @@ def executeIn(String environment, String script) {
 def encodeURL(String url) {
 	return URLEncoder.encode(url, "UTF-8")
 }
+
+def getSlackDefaults() {
+	def map = [
+			SUCCESS : [color: "#3EB991", emoji: ":thumbsup:"],
+			UNSTABLE: [color: "#FFC300", emoji: ":thinking_face:"],
+			ABORTED : [color: "#E01563", emoji: ":x:"],
+			FAILED  : [color: "#E01563", emoji: ":cry:"],
+			START   : [color: "6ECADC", emoji: ":crossed_fingers:"]
+	]
+	return map
+}
