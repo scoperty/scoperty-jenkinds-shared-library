@@ -77,7 +77,7 @@ def getSlackDefaults() {
 			UNSTABLE: [color: "#FFC300", emoji: ":thinking_face:"],
 			ABORTED : [color: "#E01563", emoji: ":x:"],
 			FAILED  : [color: "#E01563", emoji: ":cry:"],
-			START   : [color: "6ECADC", emoji: ":crossed_fingers:"]
+			STARTED : [color: "6ECADC", emoji: ":crossed_fingers:"]
 	]
 	return map
 }
