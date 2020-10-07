@@ -3,6 +3,8 @@
  * !!! IMPORTANT : This is a public repo, please do not include any confidential information here. !!!
  */
 
+import java.net.URLEncoder
+
 def getBranchType(String branchName) {
 	def devPattern = ".*develop"
 	def releasePattern = ".*release/.*"
@@ -63,4 +65,8 @@ def createVirtualEnv(String pythonPath, String name) {
 
 def executeIn(String environment, String script) {
 	sh "source ${environment}/bin/activate && " + script
+}
+
+def encodeURL(String url) {
+	return URLEncoder.encode(url, "UTF-8")
 }
