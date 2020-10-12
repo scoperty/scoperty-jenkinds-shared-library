@@ -31,13 +31,13 @@ def getBranchType(String branchName) {
 
 def getDeploymentEnvironment(String branchType) {
 	if (branchType == "pullRequest") {
-		return "dev"
+		return "DEV"
 	} else if (branchType == "dev") {
-		return "dev"
+		return "DEV"
 	} else if (branchType == "release") {
-		return "stg"
+		return "STG"
 	} else if (branchType == "master") {
-		return "prd"
+		return "PRD"
 	} else {
 		return "none";
 	}
