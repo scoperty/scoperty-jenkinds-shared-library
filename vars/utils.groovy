@@ -6,7 +6,7 @@
 import java.net.URLEncoder
 
 def getBranchType(String branchName) {
-	def devPattern = ".*develop|scoperty20|jenkinsdeploytest20"
+	def devPattern = ".*develop|scoperty20"
 	def releasePattern = ".*release/.*"
 	def featurePattern = ".*feature/.*"
 	def hotfixPattern = ".*hotfix/.*"
