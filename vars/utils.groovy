@@ -54,8 +54,8 @@ def getBuildEnvironment(String deploymentEnvironment) {
 	}
 }
 
-def getSonarArguments(String deploymentEnvironment) {
-	if (deploymentEnvironment == "pullRequest") {
+def getSonarArguments(String branchType) {
+	if (branchType == "pullRequest") {
 		return "-Dsonar.pullrequest.base=${CHANGE_TARGET} -Dsonar.pullrequest.branch=${CHANGE_BRANCH} -Dsonar.pullrequest.key=${CHANGE_ID}"
 	} else {
 		return "-Dsonar.branch.name=${BRANCH_NAME}"
