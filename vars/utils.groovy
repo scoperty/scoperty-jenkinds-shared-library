@@ -44,10 +44,13 @@ def getDeploymentEnvironment(String branchType) {
 }
 
 def getBuildEnvironment(String deploymentEnvironment) {
-	if (deploymentEnvironment == "pullRequest" || deploymentEnvironment == "none") {
-		return "dev"
+	if (deploymentEnvironment == "stg") {
+		return "stage"
+	}
+	if (deploymentEnvironment == "prd") {
+		return "prod"
 	} else {
-		return deploymentEnvironment
+		return "dev"
 	}
 }
 
