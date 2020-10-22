@@ -31,7 +31,7 @@ def getBranchType(String branchName) {
 
 def getDeploymentEnvironment(String branchType) {
 	if (branchType == "pullRequest") {
-		return "dev"
+		return "none"
 	} else if (branchType == "dev") {
 		return "dev"
 	} else if (branchType == "release") {
