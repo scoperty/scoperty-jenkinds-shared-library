@@ -13,6 +13,7 @@ def getBranchType(String branchName) {
 	def masterPattern = ".*master"
 	def pullRequest = ".*PR.*"
 	def penTestPattern = "pentest2020"
+	def dev2Pattern = ".*dev2/.*"
 	if (branchName =~ devPattern) {
 		return "dev"
 	} else if (branchName =~ releasePattern) {
@@ -27,6 +28,8 @@ def getBranchType(String branchName) {
 		return "pullRequest"
 	} else if (branchName =~ penTestPattern) {
 		return "penTest"
+	} else if (branchName =~ dev2Pattern) {
+		return "dev2"
 	} else {
 		return null;
 	}
@@ -43,6 +46,8 @@ def getDeploymentEnvironment(String branchType) {
 		return "prd"
 	} else if (branchType == "penTest") {
 		return "tst"
+	} else if (branchType == "dev2") {
+		return "dev2"
 	} else {
 		return "none";
 	}
@@ -57,6 +62,9 @@ def getBuildEnvironment(String deploymentEnvironment) {
 	}
 	if (deploymentEnvironment == "tst") {
 		return "penTest"
+	}
+	if (deploymentEnvironment == "dev2") {
+			return "dev2"
 	} else {
 		return "dev"
 	}
